@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | DIY Astro</title>
+  <meta name="description" content="Astrophotographs taken with DIY Astro equipment, plus build photos of the projects.">
+  <link rel="canonical" href="https://www.diyastro.co.uk/gallery.html">
+  <meta property="og:title" content="Gallery | DIY Astro">
+  <meta property="og:description" content="Astrophotographs taken with DIY Astro equipment, plus build photos of the projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.diyastro.co.uk/gallery.html">
+  <meta name="theme-color" content="#070b18">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="38" height="38"><span>DIY <em>Astro</em></span></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Gallery</div>
+        <h1>Gallery</h1>
+        <p>Images taken with DIY Astro equipment, plus photos from the workshop. Click an image to enlarge it, and use the arrow keys to browse.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery-filters" role="toolbar" aria-label="Filter gallery">
+          <button type="button" class="active" data-filter="all">All</button>
+          <button type="button" data-filter="deep-sky">Deep sky</button>
+          <button type="button" data-filter="solar-system">Solar system</button>
+          <button type="button" data-filter="wide-field">Wide field</button>
+          <button type="button" data-filter="build">Build photos</button>
+        </div>
+
+        <!--
+          To add a photo: copy one <figure> block below, change the image path,
+          the data-category (deep-sky, solar-system, wide-field or build) and the caption.
+          Use a small thumbnail in src="" and the full-size image in data-full="" if you have both.
+        -->
+        <div class="gallery">
+          <figure data-category="deep-sky">
+            <img src="images/gallery/orion-nebula.svg" data-full="images/gallery/orion-nebula.svg" alt="Orion Nebula (M42)" width="800" height="800" loading="lazy">
+            <figcaption>Orion Nebula (M42)<small>Emission nebula in Orion</small></figcaption>
+          </figure>
+          <figure data-category="deep-sky">
+            <img src="images/gallery/andromeda.svg" data-full="images/gallery/andromeda.svg" alt="Andromeda Galaxy (M31)" width="800" height="800" loading="lazy">
+            <figcaption>Andromeda Galaxy (M31)<small>Our nearest large spiral galaxy</small></figcaption>
+          </figure>
+          <figure data-category="deep-sky">
+            <img src="images/gallery/pleiades.svg" data-full="images/gallery/pleiades.svg" alt="The Pleiades (M45)" width="800" height="800" loading="lazy">
+            <figcaption>The Pleiades (M45)<small>Open cluster with reflection nebulosity</small></figcaption>
+          </figure>
+          <figure data-category="deep-sky">
+            <img src="images/gallery/north-america.svg" data-full="images/gallery/north-america.svg" alt="North America Nebula (NGC 7000)" width="800" height="800" loading="lazy">
+            <figcaption>North America Nebula (NGC 7000)<small>Hydrogen-alpha emission in Cygnus</small></figcaption>
+          </figure>
+          <figure data-category="solar-system">
+            <img src="images/gallery/moon.svg" data-full="images/gallery/moon.svg" alt="Waxing gibbous Moon" width="800" height="800" loading="lazy">
+            <figcaption>Waxing gibbous Moon<small>Lunar surface detail along the terminator</small></figcaption>
+          </figure>
+          <figure data-category="wide-field">
+            <img src="images/gallery/milky-way.svg" data-full="images/gallery/milky-way.svg" alt="Milky Way over the observatory" width="800" height="800" loading="lazy">
+            <figcaption>Milky Way over the observatory<small>Wide-field landscape astrophotography</small></figcaption>
+          </figure>
+          <figure data-category="build">
+            <img src="images/gallery/build-harmonic.svg" data-full="images/gallery/build-harmonic.svg" alt="Harmonic drive internals" width="800" height="800" loading="lazy">
+            <figcaption>Harmonic drive internals<small>Circular spline, flexspline and wave generator</small></figcaption>
+          </figure>
+          <figure data-category="build">
+            <img src="images/gallery/build-mount.svg" data-full="images/gallery/build-mount.svg" alt="Mount prototype" width="800" height="800" loading="lazy">
+            <figcaption>Mount prototype<small>Harmonic Drive Mount, first assembly</small></figcaption>
+          </figure>
+          <figure data-category="build">
+            <img src="images/gallery/build-pcb.svg" data-full="images/gallery/build-pcb.svg" alt="Controller PCB" width="800" height="800" loading="lazy">
+            <figcaption>Controller PCB<small>ESP32-S3 controller with stepper drivers</small></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>DIY Astro</h4>
+          <p>Open, home-built hardware and software for astrophotography &mdash; designed, built and tested under real (and mostly cloudy) British skies.</p>
+          <button class="night-toggle" type="button" title="Red night-vision mode for use at the telescope">&#9790; Night-vision mode</button>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="projects/harmonic-mount/index.html">Harmonic Drive Mount</a></li>
+            <li><a href="projects/harmonic-mount/firmware.html">Mount Firmware</a></li>
+            <li><a href="projects/harmonic-mount/ascom.html">ASCOM Driver</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About &amp; Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> diyastro.co.uk &middot; Designs shared for personal, non-commercial use. Build at your own risk.</div>
+    </div>
+  </footer>
+</body>
+</html>

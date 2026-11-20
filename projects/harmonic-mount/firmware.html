@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mount Controller Firmware | DIY Astro</title>
+  <meta name="description" content="Open ESP32 firmware for the DIY Astro harmonic drive telescope mount: tracking, GoTo, guiding, parking and Wi-Fi/USB control.">
+  <link rel="canonical" href="https://www.diyastro.co.uk/projects/harmonic-mount/firmware.html">
+  <meta property="og:title" content="Mount Controller Firmware | DIY Astro">
+  <meta property="og:description" content="Open ESP32 firmware for the DIY Astro harmonic drive telescope mount: tracking, GoTo, guiding, parking and Wi-Fi/USB control.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.diyastro.co.uk/projects/harmonic-mount/firmware.html">
+  <meta name="theme-color" content="#070b18">
+  <link rel="icon" href="../../images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../../index.html"><img src="../../images/logo.svg" alt="" width="38" height="38"><span>DIY <em>Astro</em></span></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+          <li><a href="../../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="../../index.html">Home</a> &rsaquo; <a href="../../projects/index.html">Projects</a> &rsaquo; <a href="index.html">Harmonic Drive Mount</a> &rsaquo; Controller firmware</div>
+        <h1>Controller firmware</h1>
+        <p>One firmware for all three mount variants. It runs on an ESP32-S3 controller board with Trinamic stepper drivers.</p>
+      </div>
+    </section>
+    <div class="container layout">
+
+      <aside class="side-nav" aria-label="Harmonic Drive Mount sections">
+        <h4>Project</h4>
+        <ul><li><a href="index.html">Overview</a></li></ul>
+        <h4>Hardware</h4>
+        <ul><li><a href="mini.html">Mini</a></li><li><a href="midi.html">Midi</a></li><li><a href="maxi.html">Maxi</a></li></ul>
+        <h4>Software</h4>
+        <ul><li><a href="firmware.html" aria-current="page">Controller firmware</a></li><li><a href="ascom.html">ASCOM driver</a></li></ul>
+      </aside>
+      <article>
+        <h2>Features</h2>
+        <figure class="figure"><img src="../../images/firmware.svg" alt="Controller board illustration" width="800" height="500"></figure>
+        <div class="grid grid-2">
+          <ul class="checklist">
+            <li>Sidereal, lunar, solar and King tracking rates</li>
+            <li>GoTo with smooth acceleration and deceleration</li>
+            <li>Pulse guiding (via ASCOM) and an ST-4 guide port</li>
+            <li>Park, unpark and home positions stored in flash</li>
+            <li>Optional hall-effect home sensors</li>
+          </ul>
+          <ul class="checklist">
+            <li>Meridian and horizon limits</li>
+            <li>Optional periodic error correction (PEC)</li>
+            <li>USB serial and Wi-Fi (TCP) connections</li>
+            <li>Built-in web page for configuration and status</li>
+            <li>Over-the-air (OTA) firmware updates</li>
+          </ul>
+        </div>
+
+        <h2>Hardware platform</h2>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><th scope="row">Microcontroller</th><td>ESP32-S3 (dual-core, Wi-Fi, native USB)</td></tr>
+              <tr><th scope="row">Stepper drivers</th><td>TMC2209 (UART) for Mini/Midi, TMC5160 (SPI) for Maxi</td></tr>
+              <tr><th scope="row">Step generation</th><td>Hardware timer-driven, with RA and Dec on independent timers</td></tr>
+              <tr><th scope="row">Inputs</th><td>ST-4 guide port, 2&times; home sensors, optional hand controller</td></tr>
+              <tr><th scope="row">Power</th><td>12&ndash;24 V DC input, reverse-polarity protected</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Configuration</h2>
+        <p>Each mount variant is selected with a compile-time profile. Most settings can also be changed at runtime from the built-in web page.</p>
+<pre><code>// config/mount_midi.h
+#define MOUNT_NAME          "DIY Astro HD Midi"
+#define RA_GEAR_RATIO       (100.0 * 3.0)   // harmonic drive x belt
+#define DEC_GEAR_RATIO      (100.0 * 3.0)
+#define MOTOR_STEPS_PER_REV 400             // 0.9 degree motors
+#define MICROSTEPS          256
+#define RA_RUN_CURRENT_MA   900
+#define DEC_RUN_CURRENT_MA  900
+#define MAX_SLEW_DEG_PER_S  3.0
+#define ACCEL_DEG_PER_S2    1.5</code></pre>
+
+        <h2>Building and flashing</h2>
+        <p>The firmware is built with <a href="https://platformio.org/" rel="noopener">PlatformIO</a>, either from VS Code or the command line.</p>
+<pre><code># clone the source (link to follow)
+cd diyastro-hd-firmware
+
+# build for the Midi and upload over USB
+pio run -e midi -t upload
+
+# watch the serial log
+pio device monitor -b 115200</code></pre>
+        <p>After the first USB flash, you can install later updates over Wi-Fi from the web page.</p>
+
+        <h2>Command protocol</h2>
+        <p>The controller understands a subset of the widely used <strong>LX200</strong> command set, so many planetarium programs can talk to it directly. It also has extended <code>:X...#</code> commands for configuration and diagnostics. The ASCOM driver uses the extended commands for its full feature set.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Command</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>:GR#</code> / <code>:GD#</code></td><td>Get right ascension / declination</td></tr>
+              <tr><td><code>:Sr..#</code> / <code>:Sd..#</code></td><td>Set target RA / Dec</td></tr>
+              <tr><td><code>:MS#</code></td><td>Slew to target</td></tr>
+              <tr><td><code>:Q#</code></td><td>Abort slew</td></tr>
+              <tr><td><code>:Mgn####</code></td><td>Pulse guide (n/s/e/w, milliseconds)</td></tr>
+              <tr><td><code>:hP#</code></td><td>Park</td></tr>
+              <tr><td><code>:XGS#</code></td><td>Get extended status (DIY Astro extension)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Downloads</h2>
+        <ul class="downloads">
+          <li>Firmware source code (Git repository) <span>Coming soon</span></li>
+          <li>Pre-built binaries &mdash; Mini / Midi / Maxi <span>Coming soon</span></li>
+          <li>Controller PCB &mdash; schematic &amp; Gerbers <span>Coming soon</span></li>
+        </ul>
+        <div class="btn-row"><a class="btn btn-primary" href="ascom.html">ASCOM driver &rarr;</a></div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>DIY Astro</h4>
+          <p>Open, home-built hardware and software for astrophotography &mdash; designed, built and tested under real (and mostly cloudy) British skies.</p>
+          <button class="night-toggle" type="button" title="Red night-vision mode for use at the telescope">&#9790; Night-vision mode</button>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="../../projects/harmonic-mount/index.html">Harmonic Drive Mount</a></li>
+            <li><a href="../../projects/harmonic-mount/firmware.html">Mount Firmware</a></li>
+            <li><a href="../../projects/harmonic-mount/ascom.html">ASCOM Driver</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../gallery.html">Gallery</a></li>
+            <li><a href="../../about.html">About &amp; Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> diyastro.co.uk &middot; Designs shared for personal, non-commercial use. Build at your own risk.</div>
+    </div>
+  </footer>
+</body>
+</html>

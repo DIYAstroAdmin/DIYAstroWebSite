@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 440 570">
+<title>Illustration of a harmonic-drive German equatorial mount</title>
+
+<g transform="scale(1)">
+  <!-- tripod -->
+  <g stroke="#56658f" stroke-width="10" stroke-linecap="round">
+    <line x1="300" y1="455" x2="215" y2="555"/><line x1="300" y1="455" x2="385" y2="555"/>
+  </g>
+  <line x1="300" y1="455" x2="300" y2="550" stroke="#41507a" stroke-width="10" stroke-linecap="round"/>
+  <rect x="268" y="392" width="64" height="70" rx="8" fill="#2a3763" stroke="#56658f" stroke-width="2"/>
+  <g transform="translate(300,400) rotate(-38)">
+    <!-- counterweight -->
+    <line x1="-40" y1="-170" x2="-200" y2="-170" stroke="#9aa7c7" stroke-width="9" stroke-linecap="round"/>
+    <rect x="-175" y="-199" width="38" height="58" rx="6" fill="#7b88aa" stroke="#c4cde3" stroke-width="2"/>
+    <!-- RA housing -->
+    <rect x="-34" y="-158" width="68" height="160" rx="10" fill="#33427a" stroke="#6c7db3" stroke-width="2"/>
+    <rect x="-38" y="-62" width="76" height="30" rx="5" fill="#f5b942"/>
+    <g stroke="#a67516" stroke-width="2"><line x1="-30" y1="-60" x2="-30" y2="-34"/><line x1="-22.5" y1="-60" x2="-22.5" y2="-34"/><line x1="-15" y1="-60" x2="-15" y2="-34"/><line x1="-7.5" y1="-60" x2="-7.5" y2="-34"/><line x1="0" y1="-60" x2="0" y2="-34"/><line x1="7.5" y1="-60" x2="7.5" y2="-34"/><line x1="15" y1="-60" x2="15" y2="-34"/><line x1="22.5" y1="-60" x2="22.5" y2="-34"/><line x1="30" y1="-60" x2="30" y2="-34"/></g>
+    <circle cx="0" cy="0" r="24" fill="#2a3763" stroke="#6c7db3" stroke-width="3"/>
+    <circle cx="0" cy="0" r="7" fill="#f5b942"/>
+    <!-- DEC housing -->
+    <rect x="-50" y="-198" width="152" height="56" rx="10" fill="#3b4b86" stroke="#6c7db3" stroke-width="2"/>
+    <rect x="34" y="-203" width="28" height="66" rx="5" fill="#f5b942"/>
+    <g stroke="#a67516" stroke-width="2"><line x1="37" y1="-198" x2="59" y2="-198"/><line x1="37" y1="-189" x2="59" y2="-189"/><line x1="37" y1="-180" x2="59" y2="-180"/><line x1="37" y1="-171" x2="59" y2="-171"/><line x1="37" y1="-162" x2="59" y2="-162"/><line x1="37" y1="-153" x2="59" y2="-153"/><line x1="37" y1="-144" x2="59" y2="-144"/></g>
+    <!-- saddle -->
+    <rect x="100" y="-250" width="12" height="160" rx="3" fill="#9aa7c7"/>
+    <!-- tube rings -->
+    <rect x="104" y="-255" width="78" height="14" rx="4" fill="#1b2140"/>
+    <rect x="104" y="-115" width="78" height="14" rx="4" fill="#1b2140"/>
+    <!-- optical tube -->
+    <rect x="108" y="-330" width="70" height="290" rx="8" fill="#dfe4ef" stroke="#9aa7c7" stroke-width="2"/>
+    <rect x="103" y="-336" width="80" height="64" rx="6" fill="#1b2140" stroke="#56658f" stroke-width="2"/>
+    <rect x="122" y="-42" width="42" height="26" rx="3" fill="#1b2140"/>
+    <rect x="129" y="-18" width="28" height="30" rx="3" fill="#56658f"/>
+    <line x1="168" y1="-243" x2="168" y2="-50" stroke="#f5b942" stroke-width="2" opacity=".6"/>
+  </g>
+  
+</g>
+</svg>

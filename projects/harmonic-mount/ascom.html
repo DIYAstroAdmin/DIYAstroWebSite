@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASCOM Driver | DIY Astro</title>
+  <meta name="description" content="Windows ASCOM telescope driver for the DIY Astro harmonic drive mount, compatible with N.I.N.A., PHD2, SharpCap, Cartes du Ciel and other ASCOM applications.">
+  <link rel="canonical" href="https://www.diyastro.co.uk/projects/harmonic-mount/ascom.html">
+  <meta property="og:title" content="ASCOM Driver | DIY Astro">
+  <meta property="og:description" content="Windows ASCOM telescope driver for the DIY Astro harmonic drive mount, compatible with N.I.N.A., PHD2, SharpCap, Cartes du Ciel and other ASCOM applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.diyastro.co.uk/projects/harmonic-mount/ascom.html">
+  <meta name="theme-color" content="#070b18">
+  <link rel="icon" href="../../images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../../index.html"><img src="../../images/logo.svg" alt="" width="38" height="38"><span>DIY <em>Astro</em></span></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+          <li><a href="../../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="../../index.html">Home</a> &rsaquo; <a href="../../projects/index.html">Projects</a> &rsaquo; <a href="index.html">Harmonic Drive Mount</a> &rsaquo; ASCOM driver</div>
+        <h1>ASCOM driver</h1>
+        <p>A Windows ASCOM telescope driver that lets the mount work with standard astronomy and imaging software.</p>
+      </div>
+    </section>
+    <div class="container layout">
+
+      <aside class="side-nav" aria-label="Harmonic Drive Mount sections">
+        <h4>Project</h4>
+        <ul><li><a href="index.html">Overview</a></li></ul>
+        <h4>Hardware</h4>
+        <ul><li><a href="mini.html">Mini</a></li><li><a href="midi.html">Midi</a></li><li><a href="maxi.html">Maxi</a></li></ul>
+        <h4>Software</h4>
+        <ul><li><a href="firmware.html">Controller firmware</a></li><li><a href="ascom.html" aria-current="page">ASCOM driver</a></li></ul>
+      </aside>
+      <article>
+        <h2>Overview</h2>
+        <figure class="figure"><img src="../../images/ascom.svg" alt="ASCOM driver window illustration" width="800" height="500"></figure>
+        <p><a href="https://ascom-standards.org/" rel="noopener">ASCOM</a> is the standard way for Windows astronomy software to control equipment. The DIY Astro driver implements the ASCOM <strong>ITelescopeV4</strong> interface. It runs as a <em>local server</em>, so several programs (for example N.I.N.A. and PHD2) can share the mount at the same time.</p>
+
+        <h2>Requirements</h2>
+        <ul class="checklist">
+          <li>Windows 10 or 11 (64-bit)</li>
+          <li><a href="https://ascom-standards.org/Downloads/Index.htm" rel="noopener">ASCOM Platform 7</a> or later</li>
+          <li>.NET Framework 4.8 (included with current Windows)</li>
+          <li>A DIY Astro HD mount running firmware v1.0 or later, connected by USB or Wi-Fi</li>
+        </ul>
+
+        <h2>Installation</h2>
+        <ol>
+          <li>Install the ASCOM Platform if it isn&rsquo;t already installed.</li>
+          <li>Download and run <code>DIYAstro-HD-ASCOM-Setup.exe</code> (link below).</li>
+          <li>In your imaging software, open the telescope chooser and select <strong>DIY Astro HD Mount</strong>.</li>
+          <li>Click <strong>Properties&hellip;</strong> to open the setup dialog.</li>
+        </ol>
+
+        <h2>Setup dialog</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Setting</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>Connection</td><td>USB (COM port) or Wi-Fi (IP address / host name and port)</td></tr>
+              <tr><td>Site</td><td>Latitude, longitude and elevation. These can be synced from the imaging software.</td></tr>
+              <tr><td>Mount profile</td><td>Read from the controller (Mini / Midi / Maxi). Shown for confirmation.</td></tr>
+              <tr><td>Guide rates</td><td>RA and Dec guide rates as a fraction of sidereal (default 0.5&times;)</td></tr>
+              <tr><td>Limits</td><td>Meridian flip offset and horizon limit</td></tr>
+              <tr><td>Trace logging</td><td>Writes a detailed ASCOM log for troubleshooting</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Supported capabilities</h2>
+        <div class="grid grid-2">
+          <ul class="checklist">
+            <li>Slew and sync (synchronous and asynchronous)</li>
+            <li>Tracking on/off with selectable rates</li>
+            <li>Pulse guiding</li>
+            <li>Park / unpark / find home</li>
+          </ul>
+          <ul class="checklist">
+            <li>Side-of-pier reporting and meridian flips</li>
+            <li>MoveAxis (manual jogging)</li>
+            <li>Alt/Az and equatorial coordinates</li>
+            <li>Alpaca support (planned)</li>
+          </ul>
+        </div>
+
+        <h2>Tested with</h2>
+        <p>N.I.N.A., PHD2, SharpCap, Cartes du Ciel, Stellarium (via ASCOM) and the ASCOM Conform Universal validation tool.</p>
+
+        <h2>Troubleshooting</h2>
+        <div class="note info">
+          <p><strong>Mount not found on USB?</strong> Check that the COM port shown in Windows Device Manager matches the one in the setup dialog. Close any serial terminal that may be holding the port open.</p>
+        </div>
+        <div class="note info">
+          <p><strong>Guiding pulses have no effect?</strong> Make sure PHD2 is set to use the <em>ASCOM mount</em> for guiding (&ldquo;On-camera&rdquo; guiding uses the ST-4 port instead), and that tracking is switched on.</p>
+        </div>
+
+        <h2>Downloads</h2>
+        <ul class="downloads">
+          <li>ASCOM driver installer (Windows) <span>Coming soon</span></li>
+          <li>Driver source code (C#) <span>Coming soon</span></li>
+          <li>Conform Universal test report <span>Coming soon</span></li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>DIY Astro</h4>
+          <p>Open, home-built hardware and software for astrophotography &mdash; designed, built and tested under real (and mostly cloudy) British skies.</p>
+          <button class="night-toggle" type="button" title="Red night-vision mode for use at the telescope">&#9790; Night-vision mode</button>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="../../projects/harmonic-mount/index.html">Harmonic Drive Mount</a></li>
+            <li><a href="../../projects/harmonic-mount/firmware.html">Mount Firmware</a></li>
+            <li><a href="../../projects/harmonic-mount/ascom.html">ASCOM Driver</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../gallery.html">Gallery</a></li>
+            <li><a href="../../about.html">About &amp; Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> diyastro.co.uk &middot; Designs shared for personal, non-commercial use. Build at your own risk.</div>
+    </div>
+  </footer>
+</body>
+</html>

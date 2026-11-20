@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Harmonic Drive Mount | DIY Astro</title>
+  <meta name="description" content="Build details, specifications and parts list for the Mini variant of the DIY Astro harmonic drive telescope mount.">
+  <link rel="canonical" href="https://www.diyastro.co.uk/projects/harmonic-mount/mini.html">
+  <meta property="og:title" content="Mini Harmonic Drive Mount | DIY Astro">
+  <meta property="og:description" content="Build details, specifications and parts list for the Mini variant of the DIY Astro harmonic drive telescope mount.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.diyastro.co.uk/projects/harmonic-mount/mini.html">
+  <meta name="theme-color" content="#070b18">
+  <link rel="icon" href="../../images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../../index.html"><img src="../../images/logo.svg" alt="" width="38" height="38"><span>DIY <em>Astro</em></span></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+          <li><a href="../../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="../../index.html">Home</a> &rsaquo; <a href="../../projects/index.html">Projects</a> &rsaquo; <a href="index.html">Harmonic Drive Mount</a> &rsaquo; Mini variant</div>
+        <h1>Mini variant</h1>
+        <p>A compact, travel-friendly mount for small refractors, camera lenses and guide-scope rigs. Light enough to fly with, rigid enough for long exposures.</p>
+      </div>
+    </section>
+    <div class="container layout">
+
+      <aside class="side-nav" aria-label="Harmonic Drive Mount sections">
+        <h4>Project</h4>
+        <ul><li><a href="index.html">Overview</a></li></ul>
+        <h4>Hardware</h4>
+        <ul><li><a href="mini.html" aria-current="page">Mini</a></li><li><a href="midi.html">Midi</a></li><li><a href="maxi.html">Maxi</a></li></ul>
+        <h4>Software</h4>
+        <ul><li><a href="firmware.html">Controller firmware</a></li><li><a href="ascom.html">ASCOM driver</a></li></ul>
+      </aside>
+      <article>
+        <h2>Overview</h2>
+        <figure class="figure"><img src="../../images/mount-mini.svg" alt="Illustration of the Mini harmonic drive mount" width="800" height="500"></figure>
+        <p><strong>Ideal for:</strong> Small refractors (60&ndash;80 mm), DSLR / mirrorless camera lenses, travel and back-garden quick setups.</p>
+
+          <div class="note">
+            <p><strong>Design in progress.</strong> Figures on this page are design targets and will be updated with measured values as prototypes are built and tested.</p>
+          </div>
+        <h2>Specifications</h2>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><th scope="row">Primary reduction</th><td>Size 14 strain-wave gear, 100:1</td></tr>
+              <tr><th scope="row">Belt reduction</th><td>2.5:1 (GT2 belt)</td></tr>
+              <tr><th scope="row">Total ratio</th><td>250:1</td></tr>
+              <tr><th scope="row">Motors</th><td>NEMA 14, 0.9&deg; stepper</td></tr>
+              <tr><th scope="row">Stepper drivers</th><td>TMC2209 (UART), 256 microsteps</td></tr>
+              <tr><th scope="row">Resolution (per microstep)</th><td>0.051&Prime;</td></tr>
+              <tr><th scope="row">Target payload</th><td>5 kg</td></tr>
+              <tr><th scope="row">Mount head weight</th><td>&asymp; 2.2 kg</td></tr>
+              <tr><th scope="row">Maximum slew rate</th><td>4&deg;/s</td></tr>
+              <tr><th scope="row">Saddle</th><td>Vixen-style dovetail</td></tr>
+              <tr><th scope="row">Base</th><td>3/8&Prime; photo tripod or small pier</td></tr>
+              <tr><th scope="row">Counterweight</th><td>Optional (recommended above 3 kg)</td></tr>
+              <tr><th scope="row">Power</th><td>12 V DC, 2 A</td></tr>
+              <tr><th scope="row">Approximate parts cost</th><td>&asymp; &pound;450</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Bill of materials (summary)</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Part</th><th class="num">Qty</th></tr></thead>
+            <tbody>
+              <tr><td>Strain-wave gear, size 14, 100:1 (component set)</td><td class="num">2</td></tr>
+              <tr><td>NEMA 14 0.9&deg; stepper motor</td><td class="num">2</td></tr>
+              <tr><td>GT2 pulley pair 20T / 50T + 6 mm belt</td><td class="num">2</td></tr>
+              <tr><td>Angular-contact bearings (RA &amp; Dec output)</td><td class="num">4</td></tr>
+              <tr><td>Aluminium housing parts (CNC or 3D-printed PETG/ASA prototype)</td><td class="num">1 set</td></tr>
+              <tr><td>Controller PCB (see firmware page)</td><td class="num">1</td></tr>
+              <tr><td>Vixen-style saddle</td><td class="num">1</td></tr>
+              <tr><td>Altitude/azimuth adjuster parts</td><td class="num">1 set</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A full bill of materials with part numbers and suppliers will be included in the download pack.</p>
+
+        <h2>Build notes</h2>
+        <ul class="checklist">
+          <li>The Mini is the best starting point if you have never built a mount: it uses the fewest machined parts and most of the housing can be 3D-printed for a first prototype.</li>
+          <li>Keep the belt tension modest &mdash; size 14 input shafts are small, and over-tensioning will load the wave generator bearing.</li>
+          <li>Without a counterweight, balance in Dec is still worth doing: it reduces motor current and improves guiding.</li>
+        </ul>
+
+        <h2>Downloads</h2>
+        <ul class="downloads">
+          <li>Mini &mdash; drawings (PDF) <span>Coming soon</span></li>
+          <li>Mini &mdash; CAD files (STEP) <span>Coming soon</span></li>
+          <li>Mini &mdash; 3D-print files (STL) <span>Coming soon</span></li>
+          <li>Mini &mdash; full bill of materials (CSV) <span>Coming soon</span></li>
+        </ul>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="firmware.html">Controller firmware &rarr;</a>
+          <a class="btn btn-outline" href="index.html#variants">Compare variants</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>DIY Astro</h4>
+          <p>Open, home-built hardware and software for astrophotography &mdash; designed, built and tested under real (and mostly cloudy) British skies.</p>
+          <button class="night-toggle" type="button" title="Red night-vision mode for use at the telescope">&#9790; Night-vision mode</button>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="../../projects/harmonic-mount/index.html">Harmonic Drive Mount</a></li>
+            <li><a href="../../projects/harmonic-mount/firmware.html">Mount Firmware</a></li>
+            <li><a href="../../projects/harmonic-mount/ascom.html">ASCOM Driver</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../gallery.html">Gallery</a></li>
+            <li><a href="../../about.html">About &amp; Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> diyastro.co.uk &middot; Designs shared for personal, non-commercial use. Build at your own risk.</div>
+    </div>
+  </footer>
+</body>
+</html>

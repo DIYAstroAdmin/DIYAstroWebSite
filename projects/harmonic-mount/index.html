@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harmonic Drive Telescope Mount | DIY Astro</title>
+  <meta name="description" content="A DIY German equatorial telescope mount using harmonic (strain-wave) drives, in Mini, Midi and Maxi variants, with open firmware and an ASCOM driver.">
+  <link rel="canonical" href="https://www.diyastro.co.uk/projects/harmonic-mount/">
+  <meta property="og:title" content="Harmonic Drive Telescope Mount | DIY Astro">
+  <meta property="og:description" content="A DIY German equatorial telescope mount using harmonic (strain-wave) drives, in Mini, Midi and Maxi variants, with open firmware and an ASCOM driver.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.diyastro.co.uk/projects/harmonic-mount/">
+  <meta name="theme-color" content="#070b18">
+  <link rel="icon" href="../../images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../../index.html"><img src="../../images/logo.svg" alt="" width="38" height="38"><span>DIY <em>Astro</em></span></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+          <li><a href="../../gallery.html">Gallery</a></li>
+          <li><a href="../../about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="../../index.html">Home</a> &rsaquo; <a href="../../projects/index.html">Projects</a> &rsaquo; Harmonic Drive Mount</div>
+        <h1>Harmonic Drive Mount</h1>
+        <p>A backlash-free German equatorial mount you can build at home. It comes in three sizes and uses one controller firmware and one ASCOM driver.</p>
+      </div>
+    </section>
+    <div class="container layout">
+
+      <aside class="side-nav" aria-label="Harmonic Drive Mount sections">
+        <h4>Project</h4>
+        <ul><li><a href="index.html" aria-current="page">Overview</a></li></ul>
+        <h4>Hardware</h4>
+        <ul><li><a href="mini.html">Mini</a></li><li><a href="midi.html">Midi</a></li><li><a href="maxi.html">Maxi</a></li></ul>
+        <h4>Software</h4>
+        <ul><li><a href="firmware.html">Controller firmware</a></li><li><a href="ascom.html">ASCOM driver</a></li></ul>
+      </aside>
+      <article>
+        <h2>Why harmonic drives?</h2>
+        <div class="grid grid-2" style="align-items:center">
+          <div>
+            <p>A <strong>harmonic drive</strong> (or strain-wave gear) uses an elliptical <em>wave generator</em> to flex a thin-walled <em>flexspline</em> against a rigid <em>circular spline</em> with slightly more teeth. Each turn of the input moves the output by only two teeth, which gives a large reduction in a small, light package.</p>
+            <p>For a telescope mount, this means:</p>
+            <ul class="checklist">
+              <li>Near-zero backlash, so guiding corrections take effect immediately</li>
+              <li>A high torque-to-weight ratio, so it can often run without counterweights</li>
+              <li>A compact, co-axial layout that is easy to house and seal</li>
+              <li>Single-stage 100:1 reduction, with no worm-gear meshing to adjust</li>
+            </ul>
+          </div>
+          <figure class="figure"><img src="../../images/harmonic-drive.svg" alt="Diagram of a harmonic drive showing circular spline, flexspline and wave generator" width="400" height="400" style="max-width:340px;margin:0 auto;border:none"><figcaption>Circular spline (amber), flexspline (silver) and wave generator (blue).</figcaption></figure>
+        </div>
+        <p>The trade-off is <strong>periodic error</strong>. Strain-wave gears have a small error that repeats with each turn of the wave generator. The firmware includes optional periodic error correction (PEC), and in practice the error is easily handled by autoguiding.</p>
+
+        <h2 id="variants">Three variants</h2>
+        <p>All three variants use the same design approach, controller board and firmware. They differ in gear size, motors and structure.</p>
+        <div class="grid grid-3">
+          <a class="card" href="mini.html"><img class="card-img" src="../../images/mount-mini.svg" alt="Mini" width="800" height="500"><div class="card-body"><h3>Mini</h3><p>Portable, up to 5 kg.</p><span class="more">Details &rarr;</span></div></a>
+          <a class="card" href="midi.html"><img class="card-img" src="../../images/mount-midi.svg" alt="Midi" width="800" height="500"><div class="card-body"><h3>Midi</h3><p>All-rounder, up to 12 kg.</p><span class="more">Details &rarr;</span></div></a>
+          <a class="card" href="maxi.html"><img class="card-img" src="../../images/mount-maxi.svg" alt="Maxi" width="800" height="500"><div class="card-body"><h3>Maxi</h3><p>Observatory, up to 25 kg.</p><span class="more">Details &rarr;</span></div></a>
+        </div>
+
+        <h3>Comparison</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th></th><th>Mini</th><th>Midi</th><th>Maxi</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Harmonic drive</th><td>Size 14 strain-wave gear, 100:1</td><td>Size 17 strain-wave gear, 100:1</td><td>Size 25 strain-wave gear, 100:1</td></tr>
+              <tr><th scope="row">Belt reduction</th><td>2.5:1 (GT2 belt)</td><td>3:1 (GT2 belt)</td><td>4:1 (HTD 3M belt)</td></tr>
+              <tr><th scope="row">Total ratio</th><td>250:1</td><td>300:1</td><td>400:1</td></tr>
+              <tr><th scope="row">Motors</th><td>NEMA 14, 0.9&deg; stepper</td><td>NEMA 17, 0.9&deg; stepper</td><td>NEMA 17 high-torque, 0.9&deg; stepper</td></tr>
+              <tr><th scope="row">Target payload</th><td>5 kg</td><td>12 kg</td><td>25 kg</td></tr>
+              <tr><th scope="row">Head weight</th><td>&asymp; 2.2 kg</td><td>&asymp; 4.5 kg</td><td>&asymp; 9 kg</td></tr>
+              <tr><th scope="row">Max slew</th><td>4&deg;/s</td><td>3&deg;/s</td><td>2.5&deg;/s</td></tr>
+              <tr><th scope="row">Saddle</th><td>Vixen-style dovetail</td><td>Dual Vixen / Losmandy</td><td>Losmandy D-style</td></tr>
+              <tr><th scope="row">Power</th><td>12 V DC, 2 A</td><td>12 V DC, 3 A</td><td>24 V DC, 5 A</td></tr>
+              <tr><th scope="row">Approx. cost</th><td>&asymp; &pound;450</td><td>&asymp; &pound;700</td><td>&asymp; &pound;1,200</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+          <div class="note">
+            <p><strong>Design in progress.</strong> Figures on this page are design targets and will be updated with measured values as prototypes are built and tested.</p>
+          </div>
+        <h2>System overview</h2>
+        <p>The mount is controlled by an ESP32-based board running the DIY Astro firmware. On the PC, the ASCOM driver translates commands from imaging and planetarium software into the mount&rsquo;s serial protocol, over USB or Wi-Fi.</p>
+        <figure class="figure">
+          <svg viewBox="0 0 760 150" role="img" aria-label="System diagram: imaging software to ASCOM driver to controller firmware to stepper drivers to motors and harmonic drives" style="width:100%;height:auto">
+            <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f5b942"/></marker></defs>
+            <g font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">
+              <rect x="5" y="40" width="130" height="70" rx="8" fill="#131c36" stroke="#26335c"/><text x="70" y="70" fill="#fff">Imaging software</text><text x="70" y="90" fill="#9aa7c7" font-size="11">N.I.N.A., PHD2, CdC</text>
+              <rect x="160" y="40" width="130" height="70" rx="8" fill="#131c36" stroke="#5ec8e5"/><text x="225" y="70" fill="#fff">ASCOM driver</text><text x="225" y="90" fill="#9aa7c7" font-size="11">Windows PC</text>
+              <rect x="315" y="40" width="130" height="70" rx="8" fill="#131c36" stroke="#5ec8e5"/><text x="380" y="70" fill="#fff">Controller firmware</text><text x="380" y="90" fill="#9aa7c7" font-size="11">ESP32-S3</text>
+              <rect x="470" y="40" width="130" height="70" rx="8" fill="#131c36" stroke="#26335c"/><text x="535" y="70" fill="#fff">Stepper drivers</text><text x="535" y="90" fill="#9aa7c7" font-size="11">TMC2209 / TMC5160</text>
+              <rect x="625" y="40" width="130" height="70" rx="8" fill="#131c36" stroke="#f5b942"/><text x="690" y="70" fill="#fff">Motors + HD gears</text><text x="690" y="90" fill="#9aa7c7" font-size="11">RA &amp; Dec axes</text>
+              <g stroke="#f5b942" stroke-width="2" marker-end="url(#ar)"><line x1="135" y1="75" x2="158" y2="75"/><line x1="290" y1="75" x2="313" y2="75"/><line x1="445" y1="75" x2="468" y2="75"/><line x1="600" y1="75" x2="623" y2="75"/></g>
+              <text x="302" y="30" fill="#9aa7c7" font-size="11">USB / Wi-Fi</text>
+            </g>
+          </svg>
+        </figure>
+        <div class="grid grid-2">
+          <a class="card" href="firmware.html"><div class="card-body"><span><span class="tag sw">Firmware</span></span><h3>Controller firmware</h3><p>Tracking, GoTo, parking, limits, guiding and configuration.</p><span class="more">Read more &rarr;</span></div></a>
+          <a class="card" href="ascom.html"><div class="card-body"><span><span class="tag sw">Software</span></span><h3>ASCOM driver</h3><p>Installation, setup and supported applications.</p><span class="more">Read more &rarr;</span></div></a>
+        </div>
+
+        <h2>Project status</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Component</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Mechanical design &mdash; Mini</td><td>Prototype</td></tr>
+              <tr><td>Mechanical design &mdash; Midi</td><td>Design</td></tr>
+              <tr><td>Mechanical design &mdash; Maxi</td><td>Planned</td></tr>
+              <tr><td>Controller PCB</td><td>Prototype</td></tr>
+              <tr><td>Firmware</td><td>In development</td></tr>
+              <tr><td>ASCOM driver</td><td>In development</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>DIY Astro</h4>
+          <p>Open, home-built hardware and software for astrophotography &mdash; designed, built and tested under real (and mostly cloudy) British skies.</p>
+          <button class="night-toggle" type="button" title="Red night-vision mode for use at the telescope">&#9790; Night-vision mode</button>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="../../projects/harmonic-mount/index.html">Harmonic Drive Mount</a></li>
+            <li><a href="../../projects/harmonic-mount/firmware.html">Mount Firmware</a></li>
+            <li><a href="../../projects/harmonic-mount/ascom.html">ASCOM Driver</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../gallery.html">Gallery</a></li>
+            <li><a href="../../about.html">About &amp; Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> diyastro.co.uk &middot; Designs shared for personal, non-commercial use. Build at your own risk.</div>
+    </div>
+  </footer>
+</body>
+</html>

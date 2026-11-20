@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIY Astro | Home-built astrophotography hardware & software</title>
+  <meta name="description" content="DIY Astro publishes open, home-built astrophotography projects, starting with a harmonic drive telescope mount in three sizes with its own firmware and ASCOM driver.">
+  <link rel="canonical" href="https://www.diyastro.co.uk/">
+  <meta property="og:title" content="DIY Astro | Home-built astrophotography hardware & software">
+  <meta property="og:description" content="DIY Astro publishes open, home-built astrophotography projects, starting with a harmonic drive telescope mount in three sizes with its own firmware and ASCOM driver.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.diyastro.co.uk/">
+  <meta name="theme-color" content="#070b18">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="38" height="38"><span>DIY <em>Astro</em></span></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="projects/index.html">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="hero">
+      <div class="container">
+        <div>
+          <span class="tag status">New project</span>
+          <h1>Build your own astrophotography kit</h1>
+          <p class="lead">DIY Astro shares hardware and software projects for astrophotography: designs, firmware, drivers and build notes, with photos taken using the finished kit.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="projects/harmonic-mount/index.html">Harmonic Drive Mount</a>
+            <a class="btn btn-outline" href="gallery.html">View the gallery</a>
+          </div>
+        </div>
+        <img class="hero-art" src="images/mount.svg" alt="Illustration of a harmonic drive equatorial telescope mount" width="440" height="570">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Featured project</h2>
+        <p class="section-intro">The first DIY Astro project is a German equatorial mount driven by strain-wave (harmonic) gears. It has no backlash, high torque and a compact design, and comes in three sizes.</p>
+        <div class="grid grid-3">
+          <a class="card" href="projects/harmonic-mount/mini.html">
+            <img class="card-img" src="images/mount-mini.svg" alt="Mini mount illustration" width="800" height="500">
+            <div class="card-body"><span><span class="tag hw">Hardware</span></span><h3>Mini</h3><p>Portable mount for small refractors and camera lenses. Up to 5 kg.</p><span class="more">Read more &rarr;</span></div>
+          </a>
+          <a class="card" href="projects/harmonic-mount/midi.html">
+            <img class="card-img" src="images/mount-midi.svg" alt="Midi mount illustration" width="800" height="500">
+            <div class="card-body"><span><span class="tag hw">Hardware</span></span><h3>Midi</h3><p>All-round imaging mount for mid-sized scopes. Up to 12 kg.</p><span class="more">Read more &rarr;</span></div>
+          </a>
+          <a class="card" href="projects/harmonic-mount/maxi.html">
+            <img class="card-img" src="images/mount-maxi.svg" alt="Maxi mount illustration" width="800" height="500">
+            <div class="card-body"><span><span class="tag hw">Hardware</span></span><h3>Maxi</h3><p>Observatory-class mount for large instruments. Up to 25 kg.</p><span class="more">Read more &rarr;</span></div>
+          </a>
+        </div>
+        <div class="grid grid-2" style="margin-top:1.5rem">
+          <a class="card" href="projects/harmonic-mount/firmware.html">
+            <img class="card-img" src="images/firmware.svg" alt="Controller circuit board illustration" width="800" height="500">
+            <div class="card-body"><span><span class="tag sw">Firmware</span></span><h3>Mount controller firmware</h3><p>ESP32-based controller with tracking, GoTo, guiding and Wi-Fi/USB connectivity. One firmware for all three mounts.</p><span class="more">Read more &rarr;</span></div>
+          </a>
+          <a class="card" href="projects/harmonic-mount/ascom.html">
+            <img class="card-img" src="images/ascom.svg" alt="ASCOM driver window illustration" width="800" height="500">
+            <div class="card-body"><span><span class="tag sw">Software</span></span><h3>ASCOM driver</h3><p>Windows ASCOM telescope driver, so the mount works with N.I.N.A., PHD2, SharpCap, Cartes du Ciel and more.</p><span class="more">Read more &rarr;</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">What you&rsquo;ll find here</h2>
+        <div class="grid grid-4">
+          <div class="feature"><div class="icon">&#9881;</div><h3>Hardware</h3><p>Mechanical designs, drawings, CAD and parts lists that you can build at home.</p></div>
+          <div class="feature"><div class="icon">&#9000;</div><h3>Firmware</h3><p>Open microcontroller code for motion control, with build and flashing guides.</p></div>
+          <div class="feature"><div class="icon">&#128421;</div><h3>Software</h3><p>Drivers and utilities that connect DIY hardware to standard imaging software.</p></div>
+          <div class="feature"><div class="icon">&#10022;</div><h3>Results</h3><p>Images taken with the finished equipment, with notes on what worked and what didn&rsquo;t.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">From the gallery</h2>
+        <div class="gallery preview">
+          <a href="gallery.html"><figure><img src="images/gallery/orion-nebula.svg" alt="Orion Nebula" width="800" height="800" loading="lazy"><figcaption>Orion Nebula (M42)</figcaption></figure></a>
+          <a href="gallery.html"><figure><img src="images/gallery/andromeda.svg" alt="Andromeda Galaxy" width="800" height="800" loading="lazy"><figcaption>Andromeda Galaxy (M31)</figcaption></figure></a>
+          <a href="gallery.html"><figure><img src="images/gallery/moon.svg" alt="The Moon" width="800" height="800" loading="lazy"><figcaption>Waxing gibbous Moon</figcaption></figure></a>
+          <a href="gallery.html"><figure><img src="images/gallery/build-harmonic.svg" alt="Harmonic drive" width="800" height="800" loading="lazy"><figcaption>Harmonic drive internals</figcaption></figure></a>
+        </div>
+        <div class="btn-row"><a class="btn btn-outline" href="gallery.html">See all images &rarr;</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>DIY Astro</h4>
+          <p>Open, home-built hardware and software for astrophotography &mdash; designed, built and tested under real (and mostly cloudy) British skies.</p>
+          <button class="night-toggle" type="button" title="Red night-vision mode for use at the telescope">&#9790; Night-vision mode</button>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="projects/harmonic-mount/index.html">Harmonic Drive Mount</a></li>
+            <li><a href="projects/harmonic-mount/firmware.html">Mount Firmware</a></li>
+            <li><a href="projects/harmonic-mount/ascom.html">ASCOM Driver</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About &amp; Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">2026</span> diyastro.co.uk &middot; Designs shared for personal, non-commercial use. Build at your own risk.</div>
+    </div>
+  </footer>
+</body>
+</html>
